@@ -2,4 +2,8 @@ go 1.20
 
 use ./rest
 
-use ./graphql
+use (
+	./graphql
+	./graphql-test
+	./rest-test
+)
