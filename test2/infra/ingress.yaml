@@ -1,0 +1,36 @@
+apiVersion: networking.k8s.io/v1
+kind: IngressClass
+metadata:
+  name: nginx
+spec:
+  controller: k8s.io/ingress-nginx
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: testing-ingress
+  labels:
+    name: testing-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /$1
+    nginx.ingress.kubernetes.io/use-regex: "true"
+spec:
+  ingressClassName: nginx
+  rules:
+    - host: backend-testing.emotorad.com
+      http:
+        paths:
+          - pathType: Prefix
+            path: /graphql-test2/?(.*)
+            backend:
+              service:
+                name: graphql-test2
+                port:
+                  number: 80
+          - pathType: Prefix
+            path: /rest-test2/?(.*)
+            backend:
+              service:
+                name: rest-test2
+                port:
+                  number: 80

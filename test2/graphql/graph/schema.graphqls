@@ -1,0 +1,14 @@
+type Data {
+    Id: Int!
+    Phone: String!
+    Name: String!
+    Age: Int!
+}
+
+type Query {
+    getData: [Data!]!
+}
+
+type Mutation {
+    insertData(input: String!): Data!
+}

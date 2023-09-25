@@ -12,7 +12,7 @@ type RequestBody struct {
 }
 
 func checkTokenRequest(token string) *http.Request {
-	url := "http://backend-testing.emotorad.com/rest-test1/check-token" // "http://localhost:8081/query"
+	url := "http://backend-testing.emotorad.com/rest-test1/check-token" // "http://localhost:8080/check-token"
 	requestBody := RequestBody{
 		Token: token,
 	}

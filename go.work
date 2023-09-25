@@ -1,0 +1,9 @@
+go 1.20
+
+use (
+	./test1/graphql
+	./test1/graphql-test
+	./test1/rest
+	./test1/rest-test
+	./test2/graphql
+)

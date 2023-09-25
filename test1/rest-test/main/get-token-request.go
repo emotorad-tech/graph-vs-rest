@@ -7,7 +7,7 @@ import (
 )
 
 func getTokenRequest() *http.Request {
-	url := "http://backend-testing.emotorad.com/rest-test1/get-token" // "http://localhost:8081/query"
+	url := "http://backend-testing.emotorad.com/rest-test1/get-token" // "http://localhost:8080/get-token"
 	req, err := http.NewRequest("GET", url, bytes.NewBufferString(""))
 	if err != nil {
 		log.Panic(err)
