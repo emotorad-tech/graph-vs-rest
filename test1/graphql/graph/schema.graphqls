@@ -1,0 +1,12 @@
+type Token {
+    token: String!
+    valid: Boolean!
+}
+
+type Query {
+    getToken: String!
+}
+
+type Mutation {
+    checkToken(input: String!): Token!
+}
